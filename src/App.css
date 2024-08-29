@@ -1,38 +1,103 @@
+/* App.css */
+
+/* General styles for the App */
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100vh; /* Full viewport height */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+/* Styles for the color palette container */
+.color-palette {
+  display: flex;
+  flex-direction: row;
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+/* Styles for individual color cards */
+.color-card {
+  flex: 1; /* Equal flex for each card to distribute evenly */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
   color: white;
+  padding-bottom: 20px;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+.color-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.color-hex {
+  margin: 0;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+.lock-button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Favicon icons for lock/unlock */
+.lock-button svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor; /* Inherits the color of parent */
+}
+
+/* Modal styling */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8); /* Black with some transparency */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* Make sure it overlays everything else */
+}
+
+.modal-content {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  position: relative;
+  width: 300px;
+  text-align: center;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer​
 }
